@@ -1,6 +1,7 @@
 
 require('nvim-tree').setup({
     view = {adaptive_size = true},
+    -- auto_close = true, dot'work for me
     sort = {
         sorter = "name",
         folders_first = true,
@@ -58,4 +59,6 @@ require('nvim-tree').setup({
     },
 })
 
-
+vim.api.nvim_create_autocmd("QuitPre",{
+    callback = function() vim.cmd("NvimTreeClose") end,
+})
