@@ -1,9 +1,9 @@
 
 local Plug = vim.fn['plug#']
 vim.call('plug#begin')
+	Plug 'hrsh7th/cmp-buffer'
 	Plug 'neovim/nvim-lspconfig'
 	Plug 'hrsh7th/cmp-nvim-lsp'
-	Plug 'hrsh7th/cmp-buffer'
 	Plug 'hrsh7th/cmp-path'
 	Plug 'hrsh7th/cmp-cmdline'
 	Plug 'hrsh7th/nvim-cmp'
@@ -13,9 +13,18 @@ vim.call('plug#begin')
 	Plug 'nvim-tree/nvim-web-devicons'
     Plug 'nvim-tree/nvim-tree.lua'
     Plug 'projekt0n/github-nvim-theme'
+    Plug 'navarasu/onedark.nvim'
 vim.call('plug#end')
 
-require 'basic_conf'
-require 'shortkmaps'
-require 'plugs_conf'
+require 'basic_conf'  -- configurações básicas
+require 'shortkmaps'  -- shortcuts do teclado <Sublimet-Text>
+
+-- configuracoes dos plugins
+require 'plg_configs.nvimcmp'
+require 'plg_configs.lualine'
+require 'plg_configs.lspkind'
+require 'plg_configs.nvmtree'
+require 'plg_configs.diagnst'
+
+-- configurações dos LSP
 require('lsp_configs.ts_ls')
