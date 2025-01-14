@@ -11,22 +11,28 @@ vim.call('plug#begin')
 	Plug 'nvim-lualine/lualine.nvim'
 	Plug 'nvim-tree/nvim-web-devicons'
     Plug 'nvim-tree/nvim-tree.lua'
-    Plug 'projekt0n/github-nvim-theme'
-    Plug 'navarasu/onedark.nvim'
+    Plug 'Mofiqul/dracula.nvim'
+    Plug 'nvim-treesitter/nvim-treesitter'
+    Plug 'lukas-reineke/indent-blankline.nvim'
 vim.call('plug#end')
 
 require 'basic_conf'  -- configurações básicas
 require 'shortkmaps'  -- shortcuts do teclado <Sublimet-Text>
+
 
 -- configuracoes dos plugins
 require 'plg_configs.nvimcmp'
 require 'plg_configs.lualine'
 require 'plg_configs.lspkind'
 require 'plg_configs.nvmtree'
+require 'plg_configs.treesitter'
+require 'plg_configs.identguides'
 
 -- configurações dos LSP
 require('lsp_configs.ts_ls')
 require('lsp_configs.lua_lg')
 
 -- corrige "erros" ao fechar
-require('src_scripts.pre_quit')
+-- require('src_scripts.pre_quit')
+--
+
