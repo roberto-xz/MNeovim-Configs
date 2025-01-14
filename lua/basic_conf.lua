@@ -10,6 +10,7 @@ vim.opt.cmdheight = 0
 
 vim.cmd('set signcolumn=yes')
 vim.cmd('colorscheme dracula')
+vim.cmd([[autocmd VimEnter * NvimTreeOpen]])
 
 vim.diagnostic.config({
     virtual_text = false,
