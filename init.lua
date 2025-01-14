@@ -8,7 +8,6 @@ vim.call('plug#begin')
 	Plug 'hrsh7th/cmp-cmdline'
 	Plug 'hrsh7th/nvim-cmp'
 	Plug 'onsails/lspkind.nvim'
-	Plug 'rachartier/tiny-inline-diagnostic.nvim'
 	Plug 'nvim-lualine/lualine.nvim'
 	Plug 'nvim-tree/nvim-web-devicons'
     Plug 'nvim-tree/nvim-tree.lua'
@@ -24,7 +23,10 @@ require 'plg_configs.nvimcmp'
 require 'plg_configs.lualine'
 require 'plg_configs.lspkind'
 require 'plg_configs.nvmtree'
-require 'plg_configs.diagnst'
 
 -- configurações dos LSP
 require('lsp_configs.ts_ls')
+require('lsp_configs.lua_lg')
+
+-- corrige "erros" ao fechar
+require('src_scripts.pre_quit')
