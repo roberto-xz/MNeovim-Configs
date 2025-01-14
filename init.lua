@@ -28,11 +28,8 @@ require 'plg_configs.nvmtree'
 require 'plg_configs.treesitter'
 require 'plg_configs.identguides'
 
+
 -- configurações dos LSP
 require('lsp_configs.ts_ls')
 require('lsp_configs.lua_lg')
-
--- corrige "erros" ao fechar
--- require('src_scripts.pre_quit')
---
 
