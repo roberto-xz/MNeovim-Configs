@@ -5,21 +5,18 @@ vim.opt.shiftwidth=4
 vim.opt.expandtab=true
 vim.opt.mouse="a"
 vim.opt.wrap = false
+vim.opt.termguicolors=true
 vim.opt.cmdheight = 0
 vim.opt.shortmess = "AfilnxtToFc"
 vim.cmd('colorscheme github_dark_high_contrast')
+-- vim.cmd('colorscheme onedark')
 
 vim.diagnostic.config({
     virtual_text = false,
 	signs = true,
-    underline = true,       -- Sublinhar texto com problemas.
+    underline = false,       -- Sublinhar texto com problemas.
     severity_sort = true,   -- Ordenar por severidade.
-    update_in_insert = true, -- Não atualizar no modo de inserção.
-    float = {
-        border = "rounded", -- Janela flutuante com borda arredondada.
-        source = "always",  -- Mostrar a origem sempre.
-        header = "Problemas:", -- Cabeçalho na janela flutuante.
-    },
+    update_in_insert = true, -- Não atualizar no modo de inserção. 
 })
 
 local signs = {
