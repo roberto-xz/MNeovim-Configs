@@ -3,7 +3,9 @@ require('lualine').setup ({
   options = {
     disabled_filetypes = {'NvimTree'},
     icons_enable=true,
-    theme = 'material',
+    theme = 'horizon',
+    component_separators = { left = '|', right = '|'},
+    section_separators = { left = '|', right = '|'},
   },
 
   inactive_sections = {
@@ -26,6 +28,8 @@ require('lualine').setup ({
 
   inactive_winbar = {
   	lualine_a = {'buffers',{
+        hide_filename_extension = true,
+        mode = 0,
 		use_mode_colors = true, 
         buffers_color = {
             active = 'lualine_{section}_normal', 
@@ -33,7 +37,7 @@ require('lualine').setup ({
         },
 		symbols = {
         	modified = ' ●',      
-        	alternate_file = '', 
+        	alternate_file = false, 
         	directory =  '',
       },
 	}},
@@ -42,10 +46,12 @@ require('lualine').setup ({
   
   winbar = {
   	lualine_a = {'buffers',{
+        hide_filename_extension = true,
 		use_mode_colors = true,
+        mode = 0,
 		symbols = {
         	modified = ' ●',      
-        	alternate_file = '', 
+        	alternate_file = false, 
         	directory =  '',
       },
 	}},
