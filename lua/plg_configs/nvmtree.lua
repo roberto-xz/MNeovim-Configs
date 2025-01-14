@@ -1,13 +1,13 @@
 
 require('nvim-tree').setup({
     view = {adaptive_size = true},
-    -- auto_close = true, dot'work for me
+    -- auto_close = true,
     sort = {
         sorter = "name",
         folders_first = true,
         files_first = false,
     },
-
+    
     renderer = {
         root_folder_modifier=":t",
         group_empty = true,
@@ -27,7 +27,7 @@ require('nvim-tree').setup({
             folder = true,
             folder_arrow = true,
             git = false,
-            bookmarks=false,
+            bookmarks=true,
         },
         glyphs = {
             default = "",
