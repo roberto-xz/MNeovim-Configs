@@ -7,9 +7,9 @@ vim.opt.mouse="a"
 vim.opt.wrap = false
 vim.opt.termguicolors=true
 vim.opt.cmdheight = 0
-vim.opt.shortmess = "AfilnxtToFc"
-vim.cmd('colorscheme github_dark_high_contrast')
--- vim.cmd('colorscheme onedark')
+
+vim.cmd('set signcolumn=yes')
+vim.cmd('colorscheme dracula')
 
 vim.diagnostic.config({
     virtual_text = false,
@@ -30,3 +30,12 @@ for type, icon in pairs(signs) do
   local hl = "DiagnosticSign" .. type
   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 end
+
+ 
+-- Configura folding com Treesitter
+vim.o.foldmethod = "expr"
+vim.o.foldexpr = "nvim_treesitter#foldexpr()"
+vim.o.foldlevel = 99  -- Expande todos os folds por padrão
+
+
+
