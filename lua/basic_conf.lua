@@ -7,6 +7,7 @@ vim.opt.mouse="a"
 vim.opt.wrap = false
 vim.opt.termguicolors=true
 vim.opt.cmdheight = 0
+vim.opt.clipboard:append("unnamedplus")
 
 vim.cmd('set signcolumn=yes')
 vim.cmd('colorscheme dracula')
