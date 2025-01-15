@@ -3,7 +3,7 @@
 
 Este repositório contém as configurações personalizadas do Neovim que uso para manter minha IDE sempre à mão, independentemente do ambiente. Ele foi criado com o objetivo de preservar meu fluxo de trabalho e facilitar a instalação em novos sistemas.
 
-<img src='res/output.gif'/>
+<img src='preview.png'/>
 
 ## Objetivos
   - Disponibilizar uma IDE pronta para desenvolvimento, com todas as configurações, atalhos e plugins que uso regularmente.
