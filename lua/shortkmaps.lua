@@ -2,6 +2,7 @@
 local close_buffer = require('src_scripts.close_buffer')
 local swap_buffer  = require('src_scripts.swap_buffer')
 local safe_exit    = require('src_scripts.safe_exit')
+local toggle_TtB   = require('src_scripts.toggle_TtB')
 local options= {noremap=true, silent=true}
 
 vim.keymap.set({'n','i'}, "<C-w>", "<Cmd>write!<CR>",options)
@@ -16,7 +17,8 @@ vim.keymap.set({'n','i','v'}, "<C-x>", "<Cmd>delete<CR>",options)
 vim.keymap.set({'n','i','v'}, "<C-z>", "<ESC>u<CR>i",options)
 vim.keymap.set({'n','i','v'}, "<C-Right>",function() swap_buffer('r') end)
 vim.keymap.set({'n','i','v'}, "<C-Left>",function() swap_buffer('l') end)
-
-vim.keymap.set({'i','n','v'},'<C-f>',function()vim.cmd("NvimTreeFocus") end)
+vim.keymap.set('n', '<C-/>', require('Comment.api').toggle.linewise.current)
+vim.keymap.set('v', '<C-/>', '<ESC><CMD>lua require("Comment.api").toggle.linewise(vim.fn.visualmode())<CR>')
+vim.keymap.set({'i','n','v'},'<C-f>',toggle_TtB)
 vim.keymap.set({'i','n','v'},'<C-q>',close_buffer)
 
