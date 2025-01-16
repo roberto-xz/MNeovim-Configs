@@ -7,16 +7,18 @@ vim.opt.mouse="a"
 vim.opt.wrap = false
 vim.opt.termguicolors=true
 vim.opt.cmdheight = 0
+vim.opt.cursorline = true
 vim.opt.clipboard:append("unnamedplus")
+_G.buffer_origen_2712a21 = nil -- guarda o id do buffer em foco
 
 vim.cmd('set signcolumn=yes')
-vim.cmd('colorscheme dracula')
 vim.cmd([[autocmd VimEnter * NvimTreeOpen]])
+vim.cmd('colorscheme dracula')
 
 vim.diagnostic.config({
     virtual_text = false,
 	signs = true,
-    underline = false,       -- Sublinhar texto com problemas.
+    underline = true,       -- Sublinhar texto com problemas.
     severity_sort = true,   -- Ordenar por severidade.
     update_in_insert = true, -- Não atualizar no modo de inserção. 
 })
