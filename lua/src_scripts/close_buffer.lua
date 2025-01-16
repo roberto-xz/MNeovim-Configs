@@ -9,9 +9,9 @@ local close_buffer = function()
     end
 
     if counts > 1 then
-        vim.cmd('write!')
+        -- vim.cmd('write!')
         vim.cmd('bp')
-        vim.cmd('bdelete '..buffer)
+        vim.cmd('bdelete! '..buffer)
     end
 end
 return close_buffer
