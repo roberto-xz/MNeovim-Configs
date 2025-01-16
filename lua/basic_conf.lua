@@ -18,7 +18,7 @@ vim.cmd('colorscheme dracula')
 vim.diagnostic.config({
     virtual_text = false,
 	signs = true,
-    underline = true,       -- Sublinhar texto com problemas.
+    underline = false,       -- Sublinhar texto com problemas.
     severity_sort = true,   -- Ordenar por severidade.
     update_in_insert = true, -- Não atualizar no modo de inserção. 
 })
