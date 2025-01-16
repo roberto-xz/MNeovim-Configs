@@ -36,7 +36,7 @@ Certifique-se de que estas dependências estão instaladas antes de usar as conf
 
 ### Navegação
 - **Ctrl-Left/Right**: Navega pelos buffers abertos.
-- **Ctrl-q**: Salva e fecha o buffer atual, focando no anterior.
+- **Ctrl-q**: fecha o buffer atual, focando no anterior.
 - **Ctrl-b**: Retorna para o buffer anterior.
 - **Ctrl-f**: Abre ou foca no gestor de arquivos (nvim-tree).
 - **Ctrl-e**: Fecha o Neovim, mas não fecha se houver buffers não salvos.
@@ -55,6 +55,7 @@ Certifique-se de que estas dependências estão instaladas antes de usar as conf
 - **Ctrl-w**: Salvamento forçado.
 - **Ctrl-Up**: Move a linha atual para cima.
 - **Ctrl-Down**: Move a linha atual para baixo.
+- **Ctrl-/**: Comenta a linha, ou a seleção
 
 ## Como Usar
 Clone este repositório no seu sistema:
