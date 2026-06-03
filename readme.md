@@ -1,69 +1,183 @@
-
 # MNeovim Configs
 
-Este repositório contém as configurações personalizadas do Neovim que uso para manter minha IDE sempre à mão, independentemente do ambiente. Ele foi criado com o objetivo de preservar meu fluxo de trabalho e facilitar a instalação em novos sistemas.
+Configuração pessoal do Neovim focada em produtividade, portabilidade e baixo consumo de recursos. O objetivo deste projeto é disponibilizar um ambiente completo de desenvolvimento que possa ser replicado facilmente em qualquer máquina, mantendo os mesmos atalhos, ferramentas e fluxo de trabalho.
 
-<img src='preview.png'/>
+<img src="preview.png"/>
 
 ## Objetivos
-  - Disponibilizar uma IDE pronta para desenvolvimento, com todas as configurações, atalhos e plugins que uso regularmente.
-  - Garantir portabilidade e facilidade de configuração ao usar o Neovim em diferentes dispositivos.
-  - Fornecer uma base sólida para desenvolvimento, com suporte para linguagens, LSP, navegação eficiente e edição rápida.
 
-## Funcionalidades Principais
-  - Atalhos Personalizados: Mapeamentos otimizados para navegação, edição e integração com LSP.
-  - Gerenciamento de Plugins: Configuração de plugins para produtividade e funcionalidades adicionais.
-  - Suporte LSP Integrado: Autocompletes, renomeação de símbolos e navegação de código com atalhos intuitivos.
-  - Configuração do Gestor de Arquivos: Integração com o nvim-tree para navegação eficiente.
-  - Estilo Consistente: Configurações de temas, cores e layout para uma experiência visual agradável.
-  - Portabilidade: Scripts para fácil instalação e adaptação a novos sistemas.
+* Disponibilizar um ambiente de desenvolvimento pronto para uso.
+* Manter uma experiência consistente em diferentes sistemas.
+* Centralizar configurações, plugins, atalhos e integrações.
+* Utilizar ferramentas modernas do ecossistema Neovim sem depender de IDEs pesadas.
+* Priorizar navegação rápida por teclado e integração com LSP.
+
+---
+
+## Funcionalidades
+
+### Edição
+
+* Sistema de atalhos baseado em `<leader>`.
+* Duplicação e movimentação de linhas.
+* Comentários rápidos.
+* Fechamento seguro de buffers.
+* Salvamento rápido.
+
+### Navegação
+
+* NvimTree para visualização da estrutura do projeto.
+* Telescope para busca rápida de arquivos, buffers e conteúdo.
+* Alternância rápida entre buffers.
+* Navegação por definições e referências através do LSP.
+
+### LSP
+
+* Integração com a API nativa de LSP do Neovim.
+* Suporte a TypeScript.
+* Suporte a Lua.
+* Renomeação de símbolos.
+* Navegação para definições.
+* Diagnósticos em tempo real.
+
+### Interface
+
+* Tema Dracula.
+* Barra de status com Lualine.
+* Guias de indentação com IBL.
+* Compatibilidade com terminais sem Nerd Fonts.
+* Interface minimalista e portátil.
+
+---
+
+## Plugins Utilizados
+
+* vim-plug
+* nvim-tree
+* telescope.nvim
+* plenary.nvim
+* nvim-cmp
+* cmp-buffer
+* cmp-path
+* cmp-cmdline
+* cmp-nvim-lsp
+* nvim-lspconfig
+* lualine.nvim
+* dracula.nvim
+* indent-blankline.nvim (ibl)
+* auto-session
 
 ---
 
 ## Dependências
 
-Para usar este repositório corretamente, você precisará instalar as seguintes dependências no seu sistema:
-  - Plug: Gerenciador de plugins do Vim/Neovim.
-  - Node.js: Usado por diversos plugins, especialmente para o suporte LSP e Treesitter.
-  - xclip: Necessário para integração com o clipboard no Linux.
-  - GCC: Compilador necessário para instalar o Treesitter e outros plugins que dependem de código C.
+### Obrigatórias
 
-Certifique-se de que estas dependências estão instaladas antes de usar as configurações.
+* Neovim >= 0.11
+* Git
+* Node.js
+* npm
+* ripgrep
+
+### Linux
+
+* xclip
+
+### LSP
+
+TypeScript:
+
+```bash
+npm install -g typescript typescript-language-server
+```
+
+Lua:
+
+```bash
+npm install -g lua-language-server
+```
 
 ---
 
-## Shortcuts
+## Atalhos
 
-### Navegação
-- **Ctrl-Left/Right**: Navega pelos buffers abertos.
-- **Ctrl-q**: fecha o buffer atual, focando no anterior.
-- **Ctrl-b**: Retorna para o buffer anterior.
-- **Ctrl-f**: Abre ou foca no gestor de arquivos (nvim-tree).
-- **Ctrl-e**: Fecha o Neovim, mas não fecha se houver buffers não salvos.
+### Gerais
 
-### Shortcuts LSP
-- **Ctrl-k**: Vai para a definição da função.
-- **Ctrl-r**: Renomeia todas as ocorrências.
-- **Ctrl-tab**: Mostra o autocomplete.
-- **Enter**: Confirma uma sugestão.
-- **Left/Right**: Cancela e fecha o popup.
+| Atalho      | Ação                               |
+| ----------- | ---------------------------------- |
+| `<leader>w` | Salvar arquivo                     |
+| `<leader>q` | Sair com verificação de alterações |
+| `<leader>c` | Fechar buffer                      |
+| `<leader>b` | Alternar para buffer anterior      |
+| `<leader>t` | Alternar NvimTree                  |
+
+### Buffers
+
+| Atalho      | Ação            |
+| ----------- | --------------- |
+| `<leader>h` | Buffer anterior |
+| `<leader>l` | Próximo buffer  |
 
 ### Edição
-- **Ctrl-d**: Duplica uma linha.
-- **Ctrl-x**: Exclui a linha atual.
-- **Ctrl-z**: Desfaz a última alteração.
-- **Ctrl-w**: Salvamento forçado.
-- **Ctrl-Up**: Move a linha atual para cima.
-- **Ctrl-Down**: Move a linha atual para baixo.
-- **Ctrl-/**: Comenta a linha, ou a seleção
 
-## Como Usar
-Clone este repositório no seu sistema:
-``` bash
-  git clone https://github.com/roberto-xz/MNeovim-Configs.git ~/.config/nvim
+| Atalho      | Ação                   |
+| ----------- | ---------------------- |
+| `<leader>d` | Duplicar linha         |
+| `<leader>x` | Excluir buffer         |
+| `<leader>z` | Desfazer               |
+| `<leader>j` | Mover linha para baixo |
+| `<leader>k` | Mover linha para cima  |
+
+### LSP
+
+| Atalho | Ação              |
+| ------ | ----------------- |
+| `gd`   | Ir para definição |
+| `F2`   | Renomear símbolo  |
+
+### Folds
+
+| Atalho      | Ação           |
+| ----------- | -------------- |
+| `<leader>[` | Recolher bloco |
+| `<leader>]` | Expandir bloco |
+
+### Telescope
+
+| Atalho       | Ação                    |
+| ------------ | ----------------------- |
+| `<leader>ff` | Procurar arquivos       |
+| `<leader>fg` | Buscar texto no projeto |
+| `<leader>fb` | Listar buffers          |
+| `<leader>fr` | Arquivos recentes       |
+| `<leader>fs` | Sessões salvas          |
+
+---
+
+## Instalação
+
+Clone o repositório:
+
+```bash
+git clone https://github.com/roberto-xz/MNeovim-Configs.git ~/.config/nvim
 ```
 
-Instale as dependências necessárias (ex.: gerenciadores de plugins, ferramentas LSP).
-Abra o Neovim e os plugins serão instalados automaticamente (dependendo da configuração).
+Abra o Neovim:
 
+```bash
+nvim
+```
 
+Instale os plugins:
+
+```vim
+:PlugInstall
+```
+
+Reinicie o Neovim após a instalação.
+
+---
+
+## Filosofia
+
+Esta configuração busca equilibrar simplicidade e produtividade. A ideia não é transformar o Neovim em uma IDE gigantesca, mas fornecer ferramentas suficientes para desenvolvimento moderno, mantendo inicialização rápida, baixo consumo de recursos e total controle do ambiente.
