@@ -2,7 +2,7 @@
 require('lualine').setup ({
   options = {
     disabled_filetypes = {'NvimTree'},
-    icons_enable=true,
+    icons_enable=false,
     theme = 'horizon',
     component_separators = { left = '|', right = '|'},
     section_separators = { left = '|', right = '|'},
@@ -36,9 +36,9 @@ require('lualine').setup ({
             inactive = 'lualine_{section}_inactive',
         },
 		symbols = {
-        	modified = ' ●',      
+        	modified = ' ~',      
         	alternate_file = false, 
-        	directory =  '',
+        	directory =  'f',
       },
 	}},
 	lualine_z = {"os.date('%H:%M %p')"},
@@ -50,9 +50,9 @@ require('lualine').setup ({
 		use_mode_colors = true,
         mode = 0,
 		symbols = {
-        	modified = ' ●',      
+        	modified = ' ~',      
         	alternate_file = false, 
-        	directory =  '',
+        	directory =  'f',
       },
 	}},
 	lualine_z = {"os.date('%H:%M %p')"},

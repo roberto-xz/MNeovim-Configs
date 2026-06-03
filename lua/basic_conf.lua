@@ -9,10 +9,11 @@ vim.opt.termguicolors=true
 vim.opt.cmdheight = 0
 vim.opt.cursorline = true
 vim.opt.clipboard:append("unnamedplus")
+vim.g.mapleader = " "
+
 _G.buffer_origen_2712a21 = nil -- guarda o id do buffer em foco
 
 vim.cmd('set signcolumn=yes')
-vim.cmd([[autocmd VimEnter * NvimTreeOpen]])
 vim.cmd('colorscheme dracula')
 
 vim.diagnostic.config({
@@ -24,10 +25,10 @@ vim.diagnostic.config({
 })
 
 local signs = {
-  Error = "󰅚",    -- Ícone para erros
-  Warn  = "󰌶",     -- Ícone para avisos
-  Hint  = "󰌶",     -- Ícone para dicas
-  Info = ""      -- Ícone para informações
+  Error = "×",    -- Ícone para erros
+  Warn  = "∆",     -- Ícone para avisos
+  Hint  = "✓",     -- Ícone para dicas 
+  Info  = "i"      -- Ícone para informações
 }
 
 for type, icon in pairs(signs) do
@@ -42,4 +43,13 @@ vim.o.foldexpr = "nvim_treesitter#foldexpr()"
 vim.o.foldlevel = 99  -- Expande todos os folds por padrão
 
 
+vim.api.nvim_create_autocmd("VimEnter", {
+    callback = function(data)
+        local directory = vim.fn.isdirectory(data.file) == 1
 
+        if directory then
+            vim.cmd.cd(data.file)
+            require("nvim-tree.api").tree.open()
+        end
+    end,
+})

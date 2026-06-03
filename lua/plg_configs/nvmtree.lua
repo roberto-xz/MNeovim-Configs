@@ -21,7 +21,7 @@ require('nvim-tree').setup({
             }
         },
         icons = {
-            webdev_colors = true,
+            webdev_colors = false,
             show = {
             file = true,
             folder = true,
@@ -30,31 +30,32 @@ require('nvim-tree').setup({
             bookmarks=true,
         },
         glyphs = {
-            default = "",
-            symlink = "",
-            bookmark = "󰆤",
-            modified = "●",
-            hidden = "󰜌",
-            folder = {
-                arrow_closed = "",
-                arrow_open = "",
-                default = "",
-                open = "",
-                empty = "",
-                empty_open = "",
-                symlink = "",
-                symlink_open = "",
-            },
-            git = {
-                unstaged = "✗",
-                staged = "✓",
-                unmerged = "",
-                renamed = "➜",
-                untracked = "★",
-                deleted = "-",
-                ignored = "!",
-            },
-        }
+            default = "$",
+            symlink = "@",
+            bookmark = "*",
+            modified = "+",
+            hidden = ".",
+                folder = {
+                    arrow_closed = "▶",
+                    arrow_open = "▼",
+                    default = "□",
+                    open = "■",
+                    empty = "□",
+                    empty_open = "■",
+                    symlink = "@",
+                    symlink_open = "@",
+                },
+
+                git = {
+                    unstaged = "✗",
+                    staged = "✓",
+                    unmerged = "~",
+                    renamed = "→",
+                    untracked = "+",
+                    deleted = "-",
+                    ignored = "!",
+                },
+            }
         },      
     },
 })
