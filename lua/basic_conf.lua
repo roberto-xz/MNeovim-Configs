@@ -11,30 +11,29 @@ vim.opt.cursorline = true
 vim.opt.clipboard:append("unnamedplus")
 vim.g.mapleader = " "
 
+
 _G.buffer_origen_2712a21 = nil -- guarda o id do buffer em foco
 
 vim.cmd('set signcolumn=yes')
 vim.cmd('colorscheme dracula')
 
 vim.diagnostic.config({
-    virtual_text = false,
-	signs = true,
-    underline = false,       -- Sublinhar texto com problemas.
-    severity_sort = true,   -- Ordenar por severidade.
-    update_in_insert = true, -- Não atualizar no modo de inserção. 
+    virtual_text = {
+        spacing = 4,
+        prefix = ".",
+    },
+    signs = {
+        text = {
+            [vim.diagnostic.severity.ERROR] = "×",
+            [vim.diagnostic.severity.WARN]  = "∆",
+            [vim.diagnostic.severity.HINT]  = "✓",
+            [vim.diagnostic.severity.INFO]  = "i",
+        },
+    },
+    underline = true,
+    severity_sort = true,
+    update_in_insert = true,
 })
-
-local signs = {
-  Error = "×",    -- Ícone para erros
-  Warn  = "∆",     -- Ícone para avisos
-  Hint  = "✓",     -- Ícone para dicas 
-  Info  = "i"      -- Ícone para informações
-}
-
-for type, icon in pairs(signs) do
-  local hl = "DiagnosticSign" .. type
-  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-end
 
  
 -- Configura folding com Treesitter

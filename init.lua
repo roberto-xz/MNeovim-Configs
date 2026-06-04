@@ -2,7 +2,6 @@
 local Plug = vim.fn['plug#']
 vim.call('plug#begin')
     Plug 'hrsh7th/cmp-buffer'
-    Plug 'neovim/nvim-lspconfig'
     Plug 'hrsh7th/cmp-nvim-lsp'
     Plug 'hrsh7th/cmp-path'
     Plug 'hrsh7th/cmp-cmdline'
